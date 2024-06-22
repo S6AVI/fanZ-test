@@ -2,4 +2,16 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="main">#973EFF</color>
+    <color name="main2">#FFB700</color>
+    <color name="text">#917EA7</color>
+    <color name="text2">#BFB6EB</color>
+    <color name="background">#FCFAFF</color>
+    <color name="bg">#1B0B2F</color>
+    <color name="correct">#31BD60</color>
+    <color name="gradBackground">#33334D</color>
+    <color name="purple">#BFB6EB</color>
+    <color name="purple2">#451E71</color>
+
 </resources>
