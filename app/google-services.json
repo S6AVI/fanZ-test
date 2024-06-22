@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "373786940805",
+    "project_id": "fanz-test-7d215",
+    "storage_bucket": "fanz-test-7d215.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:373786940805:android:a1cc4127bd2c122e4b60ec",
+        "android_client_info": {
+          "package_name": "com.saleem.fanz_test"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuNp1_1q7cpJEi0RTCcGNkm5j5ozenSVE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
