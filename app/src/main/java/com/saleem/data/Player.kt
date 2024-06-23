@@ -1,7 +1,7 @@
 package com.saleem.data
 
 data class Player(
-    val id: String = "",
+    var id: String = "",
     val name: String = "",
     val teamId: String = "",
     val number: String = "",

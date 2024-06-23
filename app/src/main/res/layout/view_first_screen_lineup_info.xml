@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="4dp"
         android:backgroundTint="@color/purple2"
-        android:drawableLeft="@drawable/fantaZ_points_active"
+        android:drawableLeft="@drawable/fantaz_points_active"
         android:padding="16dp"
         android:text="124"
         android:textSize="16sp"
