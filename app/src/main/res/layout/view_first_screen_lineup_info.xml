@@ -2,7 +2,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="24dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
@@ -12,9 +11,9 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/main"
         android:drawableLeft="@drawable/currency"
-        android:padding="16dp"
+        android:padding="8dp"
         android:text="1M"
-        android:textSize="16sp"
+        android:textSize="8sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,20 +21,20 @@
         android:id="@+id/fantazBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="4dp"
+        android:layout_marginEnd="2dp"
         android:backgroundTint="@color/purple2"
-        android:drawableLeft="@drawable/fantaz_points_active"
-        android:padding="16dp"
+        android:drawableLeft="@drawable/fantaz"
+        android:padding="8dp"
         android:text="124"
-        android:textSize="16sp"
+        android:textSize="8sp"
         app:layout_constraintEnd_toStartOf="@id/helpIconButton"
         app:layout_constraintTop_toTopOf="parent" />
 
 
     <ImageView
         android:id="@+id/helpIconButton"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
         android:src="@drawable/help"
         app:layout_constraintBottom_toBottomOf="@+id/fantazBtn"
         app:layout_constraintEnd_toEndOf="parent"

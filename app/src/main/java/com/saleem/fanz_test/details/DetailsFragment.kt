@@ -33,7 +33,7 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
             findNavController().popBackStack()
         }
 
-        binding.nestedScrollView.setOnScrollChangeListener { v, scrollX, scrollY, oldScrollX, oldScrollY ->
+        binding.nestedScrollView.setOnScrollChangeListener { _, _, _, _, _ ->
             val card = binding.playerCard.cardParent
             val rotationAngle =
                 calculateRotationAngle(binding.nestedScrollView, card)

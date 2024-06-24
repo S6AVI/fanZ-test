@@ -6,18 +6,17 @@ import androidx.recyclerview.widget.GridLayoutManager
 class CustomGridLayoutManager(
     context: Context,
     private val columnSizes: IntArray
-) : GridLayoutManager(context, 1) {
-
-    private var maxSpans = 0
+) : GridLayoutManager(context, columnSizes.maxOrNull() ?: 1) {
 
     init {
-        calculateMaxSpans()
         spanSizeLookup = object : SpanSizeLookup() {
             override fun getSpanSize(position: Int): Int {
                 var currentPosition = 0
+                var currentRowSpanCount = 0
                 for (columnSize in columnSizes) {
+                    currentRowSpanCount = columnSize
                     if (position >= currentPosition && position < currentPosition + columnSize) {
-                        return columnSize
+                        return calculateSpanSize(position - currentPosition, currentRowSpanCount)
                     }
                     currentPosition += columnSize
                 }
@@ -26,8 +25,17 @@ class CustomGridLayoutManager(
         }
     }
 
-    private fun calculateMaxSpans() {
-        maxSpans = columnSizes.sum()
-        setSpanCount(maxSpans)
+    private fun calculateSpanSize(positionInRow: Int, rowSpanCount: Int): Int {
+        return if (rowSpanCount == 0) {
+            spanCount
+        } else {
+
+            val spanSize = spanCount / rowSpanCount
+            if (positionInRow < spanCount % rowSpanCount){
+                spanSize + 1
+            } else {
+                spanSize
+            }
+        }
     }
 }

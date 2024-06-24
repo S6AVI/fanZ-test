@@ -18,9 +18,11 @@
         android:id="@+id/detailsFragment"
         android:name="com.saleem.fanz_test.details.DetailsFragment"
         android:label="fragment_details"
-        tools:layout="@layout/fragment_details" >
-        <argument
-            android:name="playerId"
-            app:argType="string" />
+        tools:layout="@layout/fragment_details">
+        <argument android:name="playerId" app:argType="string" />
+
+        <deepLink
+            app:uri="https://fanz_test.com/details/{playerId}" />
+
     </fragment>
 </navigation>
