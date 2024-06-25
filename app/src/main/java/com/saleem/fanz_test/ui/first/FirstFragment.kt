@@ -1,7 +1,6 @@
-package com.saleem.fanz_test.first
+package com.saleem.fanz_test.ui.first
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -13,15 +12,13 @@ import com.saleem.util.exhaustive
 import com.saleem.util.hide
 import com.saleem.util.logD
 import com.saleem.util.show
-import com.saleem.fanz_test.CustomGridLayoutManager
 import com.saleem.fanz_test.R
-import com.saleem.util.toast
 import kotlinx.coroutines.launch
 
 
 class FirstFragment : Fragment(R.layout.fragment_first) {
 
-    lateinit var binding: FragmentFirstBinding
+    private lateinit var binding: FragmentFirstBinding
     private val viewModel: FirstViewModel by activityViewModels()
 
     private lateinit var layoutManager: CustomGridLayoutManager
@@ -34,9 +31,10 @@ class FirstFragment : Fragment(R.layout.fragment_first) {
 
         binding = FragmentFirstBinding.bind(view)
 
+        // remote config
         lifecycleScope.launch {
             viewModel.fetchAndActivate()
-            val playersNum = viewModel.getInt(getString(R.string.players_num), 11)
+            val playersNum = viewModel.getInt(getString(R.string.players_num))
             setLayoutManager(playersNum)
             viewModel.getLineup()
         }
@@ -45,7 +43,7 @@ class FirstFragment : Fragment(R.layout.fragment_first) {
         //viewModel.uploadPlayers()
 
         binding.lineup.recyclerView.adapter = adapter
-//        binding.lineup.recyclerView.layoutManager
+
 
         observer()
 
@@ -66,13 +64,13 @@ class FirstFragment : Fragment(R.layout.fragment_first) {
 
                 is UiState.Loading -> {
                     binding.progressBar.show()
-                    Log.d("savii", "success")
+
                     true
                 }
 
                 is UiState.Failure -> {
                     binding.progressBar.hide()
-                    Log.d("savii", state.error.toString())
+
                     true
                 }
 

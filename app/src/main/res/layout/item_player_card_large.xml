@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!-- Top Left Corner: League Logo -->
+
         <ImageView
             android:id="@+id/logoLeague"
             android:layout_width="36dp"
@@ -22,7 +22,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- Under Corner: Season Name -->
+
         <TextView
             android:id="@+id/seasonName"
             android:layout_width="wrap_content"
@@ -33,7 +33,7 @@
             app:layout_constraintTop_toBottomOf="@id/logoLeague"
             tools:text="23-24" />
 
-        <!-- Top Right Corner: Club Logo -->
+
         <androidx.cardview.widget.CardView
             android:id="@+id/logoClubContainer"
             android:layout_width="36dp"
@@ -52,7 +52,7 @@
                 tools:src="@drawable/nas_logo" />
         </androidx.cardview.widget.CardView>
 
-        <!-- Center: Player Image -->
+
         <ImageView
             android:id="@+id/playerImage"
             android:layout_width="0dp"
@@ -64,7 +64,7 @@
             app:layout_constraintTop_toBottomOf="@id/logoClubContainer"
             tools:src="@drawable/cr7_photo" />
 
-        <!-- Under Image: Player Number -->
+
         <TextView
             android:id="@+id/playerNumber"
             android:layout_width="wrap_content"
@@ -78,7 +78,7 @@
             app:layout_constraintTop_toBottomOf="@id/playerImage"
             tools:text="7" />
 
-        <!-- Under Number: Player Name -->
+
         <TextView
             android:id="@+id/playerName"
             android:layout_width="wrap_content"
@@ -91,7 +91,7 @@
             app:layout_constraintTop_toBottomOf="@id/playerNumber"
             tools:text="Cristiano Ronaldo" />
 
-        <!-- Under Name: Player Position -->
+
         <TextView
             android:id="@+id/playerPosition"
             android:layout_width="wrap_content"
@@ -104,7 +104,7 @@
             app:layout_constraintTop_toBottomOf="@id/playerName"
             tools:text="Forward" />
 
-        <!-- Under Position: Player Status -->
+
         <TextView
             android:id="@+id/playerStatus"
             android:layout_width="wrap_content"
@@ -118,7 +118,7 @@
             app:layout_constraintStart_toEndOf="@+id/logoApp"
             tools:text="Free" />
 
-        <!-- Bottom Left Corner: App Logo -->
+
         <ImageView
             android:id="@+id/logoApp"
             android:layout_width="36dp"

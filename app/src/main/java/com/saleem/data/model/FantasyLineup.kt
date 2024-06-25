@@ -1,4 +1,4 @@
-package com.saleem.data
+package com.saleem.data.model
 
 data class FantasyTeam(
     val id: String = "",

@@ -1,5 +1,7 @@
 package com.saleem.data
 
+import com.saleem.data.model.Player
+
 val messi = Player(
     id = "player1",
     name = "Lionel Messi",
@@ -47,4 +49,8 @@ val salah = Player(
 )
 
 
-val players = listOf(messi, messi, messi, messi, messi, messi, messi,messi, messi, messi,messi, messi, messi, cristiano, salah)
+val players = listOf(
+    messi, messi, messi, messi, messi, messi, messi,
+    messi, messi, messi,
+    messi, messi, messi, cristiano, salah
+)

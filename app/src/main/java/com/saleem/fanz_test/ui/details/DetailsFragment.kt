@@ -1,4 +1,4 @@
-package com.saleem.fanz_test.details
+package com.saleem.fanz_test.ui.details
 
 import android.os.Bundle
 import android.view.View
@@ -7,7 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
-import com.saleem.data.Player
+import com.saleem.data.model.Player
 import com.saleem.fanz_test.R
 import com.saleem.fanz_test.databinding.FragmentDetailsBinding
 import com.saleem.util.UiState
@@ -16,7 +16,7 @@ import com.saleem.util.logD
 
 class DetailsFragment : Fragment(R.layout.fragment_details) {
 
-    lateinit var binding: FragmentDetailsBinding
+    private lateinit var binding: FragmentDetailsBinding
     private val viewModel: DetailsViewModel by activityViewModels()
 
 
@@ -36,17 +36,19 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
         binding.nestedScrollView.setOnScrollChangeListener { _, _, _, _, _ ->
             val card = binding.playerCard.cardParent
             val rotationAngle =
-                calculateRotationAngle(binding.nestedScrollView, card)
+                calculateRotationAngle(binding.nestedScrollView)
             card.rotation = rotationAngle
         }
 
 
     }
 
-    private fun calculateRotationAngle(nestedScrollView: NestedScrollView, viewToRotate: View): Float {
+    private fun calculateRotationAngle(
+        nestedScrollView: NestedScrollView
+    ): Float {
         val scrollY = nestedScrollView.scrollY
         val maxScroll = nestedScrollView.getChildAt(0).height - nestedScrollView.height
-        val rotationFactor = 0.5f // Adjust this value to control the rotation speed
+        val rotationFactor = 0.5f
         return (scrollY.toFloat() / maxScroll) * 360f * rotationFactor
     }
 
@@ -55,12 +57,10 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
             when (state) {
 
                 is UiState.Loading -> {
-                    //binding.progressBar.show()
                     true
                 }
 
                 is UiState.Failure -> {
-                    //binding.progressBar.hide()
                     logD(state.error.toString())
                     true
                 }
@@ -68,7 +68,6 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
                 is UiState.Success -> {
                     logD("success: ${state.data.name}")
                     bindData(state.data)
-                    //binding.progressBar.hide()
                     true
                 }
             }.exhaustive
@@ -76,16 +75,20 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
     }
 
     private fun bindData(player: Player) {
-       binding.playerCard.apply {
-           playerName.text = player.name
-           playerPosition.text = player.position
-           playerStatus.text = player.cardType
-           playerNumber.text = player.number
+        binding.playerCard.apply {
+            playerName.text = player.name
+            playerPosition.text = player.position
+            playerStatus.text = player.cardType
+            playerNumber.text = player.number
 
-           Glide.with(requireContext())
-               .load(player.photoUrl)
-               .into(playerImage)
-       }
+            Glide.with(requireContext())
+                .load(player.photoUrl)
+                .into(playerImage)
+
+            Glide.with(requireContext())
+                .load(player.photoUrl)
+                .into(binding.infoBar.playerImageView)
+        }
 
         binding.playerNameTF.text = player.name
 
@@ -98,8 +101,9 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
             country.text = player.country
             rewards.text = player.rewards.toString()
         }
-    }
 
+
+    }
 
 
 }

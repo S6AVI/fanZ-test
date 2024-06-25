@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/firstFragment"
-        android:name="com.saleem.fanz_test.first.FirstFragment"
+        android:name="com.saleem.fanz_test.ui.first.FirstFragment"
         android:label="fragment_first"
         tools:layout="@layout/fragment_first" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/detailsFragment"
-        android:name="com.saleem.fanz_test.details.DetailsFragment"
+        android:name="com.saleem.fanz_test.ui.details.DetailsFragment"
         android:label="fragment_details"
         tools:layout="@layout/fragment_details">
         <argument android:name="playerId" app:argType="string" />

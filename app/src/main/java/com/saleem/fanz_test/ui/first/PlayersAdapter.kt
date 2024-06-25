@@ -1,10 +1,10 @@
-package com.saleem.fanz_test.first
+package com.saleem.fanz_test.ui.first
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.saleem.data.Player
+import com.saleem.data.model.Player
 import com.saleem.fanz_test.databinding.ItemPlayerCardBinding
 
 class PlayersAdapter : RecyclerView.Adapter<PlayersAdapter.DriverRideViewHolder>() {
@@ -13,7 +13,8 @@ class PlayersAdapter : RecyclerView.Adapter<PlayersAdapter.DriverRideViewHolder>
     var onItemClickListener: ((Player) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DriverRideViewHolder {
-        val binding = ItemPlayerCardBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding =
+            ItemPlayerCardBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return DriverRideViewHolder(binding)
     }
 
@@ -43,13 +44,12 @@ class PlayersAdapter : RecyclerView.Adapter<PlayersAdapter.DriverRideViewHolder>
 
         fun bind(player: Player) {
             binding.apply {
-                // Bind the player data to the views in the item layout
+
                 playerName.text = player.name
                 playerNumber.text = player.number
                 playerPosition.text = player.position
                 playerStatus.text = player.cardType
-//                playerImage.setImageResource(player.photoUrl)
-//                logoLeague.setImageResource(R.drawable.rsl_white)
+
 
                 Glide.with(itemView.context)
                     .load(player.photoUrl)

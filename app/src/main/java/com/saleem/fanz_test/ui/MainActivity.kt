@@ -1,4 +1,4 @@
-package com.saleem.fanz_test
+package com.saleem.fanz_test.ui
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -8,6 +8,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
+import com.saleem.fanz_test.R
 
 class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController

@@ -1,4 +1,4 @@
-package com.saleem.fanz_test
+package com.saleem.fanz_test.ui.first
 
 import android.content.Context
 import androidx.recyclerview.widget.GridLayoutManager

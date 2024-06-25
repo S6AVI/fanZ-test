@@ -15,7 +15,7 @@
     android:padding="8dp">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/playerImageView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         tools:src="@drawable/cr7_photo"
@@ -25,7 +25,7 @@
         app:layout_constraintWidth_percent="0.2" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/playerInfoLabel"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -34,29 +34,29 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/iconButton1"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintEnd_toStartOf="@+id/InfoIconBtn"
+        app:layout_constraintStart_toEndOf="@+id/playerImageView"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/iconButton1"
+        android:id="@+id/InfoIconBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="?attr/selectableItemBackground"
         android:src="@drawable/ic_info"
         app:tint="@color/text2"
-        app:layout_constraintEnd_toStartOf="@+id/iconButton2"
-        app:layout_constraintTop_toTopOf="@+id/textView" />
+        app:layout_constraintEnd_toStartOf="@+id/goIconBtn"
+        app:layout_constraintTop_toTopOf="@+id/playerInfoLabel" />
 
     <ImageButton
-        android:id="@+id/iconButton2"
+        android:id="@+id/goIconBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="?attr/selectableItemBackground"
         android:src="@drawable/go"
-        app:layout_constraintBottom_toBottomOf="@+id/iconButton1"
+        app:layout_constraintBottom_toBottomOf="@+id/InfoIconBtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/iconButton1" />
+        app:layout_constraintTop_toTopOf="@+id/InfoIconBtn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

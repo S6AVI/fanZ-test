@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/gradBackground"
-    tools:context=".first.FirstFragment">
+    tools:context=".ui.first.FirstFragment">
 
     <ProgressBar
         android:id="@+id/progress_bar"

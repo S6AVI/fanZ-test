@@ -1,10 +1,10 @@
-package com.saleem.fanz_test.details
+package com.saleem.fanz_test.ui.details
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.saleem.data.Player
-import com.saleem.repo.CloudRepository
+import com.saleem.data.model.Player
+import com.saleem.data.repo.CloudRepository
 import com.saleem.util.UiState
 
 class DetailsViewModel: ViewModel() {

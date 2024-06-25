@@ -1,8 +1,8 @@
-package com.saleem.repo
+package com.saleem.data.repo
 
 import android.util.Log
 import com.google.firebase.firestore.FirebaseFirestore
-import com.saleem.data.Player
+import com.saleem.data.model.Player
 import com.saleem.data.players
 import com.saleem.util.UiState
 

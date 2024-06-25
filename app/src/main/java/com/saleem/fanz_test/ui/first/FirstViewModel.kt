@@ -1,4 +1,4 @@
-package com.saleem.fanz_test.first
+package com.saleem.fanz_test.ui.first
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -6,9 +6,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings
-import com.google.firebase.remoteconfig.get
-import com.saleem.data.Player
-import com.saleem.repo.CloudRepository
+import com.saleem.data.model.Player
+import com.saleem.data.repo.CloudRepository
 import com.saleem.util.UiState
 import com.saleem.util.logD
 import kotlinx.coroutines.launch
@@ -50,7 +49,7 @@ class FirstViewModel: ViewModel() {
         }
     }
 
-    fun getInt(key: String, defaultValue: Int = 0): Int {
+    fun getInt(key: String): Int {
         return remoteConfig.getLong(key).toInt()
     }
 
